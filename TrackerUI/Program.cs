@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using TrackerLibrary;
 
 namespace TrackerUI
 {
     static class Program
     {
-        public static object TrackerLibary { get; private set; }
+       // static object TrackerLibrary { get; private set; }
 
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
@@ -19,10 +20,12 @@ namespace TrackerUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Initialize the database connections 
-            
+            //Initialize the database connections
 
-            Application.Run(new TournamentDashboardForm());
+            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
+
+            Application.Run(new CreatePrizeForm());
+            //Application.Run(new TournamentDashboardForm());
         }
     }
 }
