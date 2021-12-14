@@ -8,6 +8,8 @@ namespace TrackerUI
 {
     static class Program
     {
+        public static object TrackerLibary { get; private set; }
+
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -16,6 +18,10 @@ namespace TrackerUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Initialize the database connections 
+            
+
             Application.Run(new TournamentDashboardForm());
         }
     }
